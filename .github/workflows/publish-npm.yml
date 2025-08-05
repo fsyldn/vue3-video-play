@@ -23,11 +23,11 @@ jobs:
       # 🔧 验证是否设置成功（可选）
       - name: Check registry
         run: npm config get registry 
-        
+
       - name: Install & Build
         run: |
-          npm install
-          npm run build
+          pnpm install
+          pnpm run build
 
       - name: Publish to npm
         run: npm publish
