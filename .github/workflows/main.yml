@@ -1,10 +1,10 @@
 name: Publish to npm
 
 on:
-  workflow_dispatch:  # 最简写法
+  workflow_dispatch:
   push:
     tags:
-      - 'v*'  # 推送 v1.0.0, v1.1.0 等 tag 时触发
+      - 'v*'
 
 jobs:
   publish:
@@ -17,13 +17,6 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      # 🔥 关键步骤：切换到稳定的 npm 镜像
-      - name: Set npm registry to taobao mirror
-        run: |
-          npm config set registry https://registry.npmmirror.com
-      # 🔧 验证是否设置成功（可选）
-      - name: Check registry
-        run: npm config get registry 
 
       - name: Install & Build
         run: |
