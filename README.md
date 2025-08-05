@@ -1,8 +1,8 @@
 <!--
  * @Author: web.王晓冬
  * @Date: 2021-08-19 18:56:59
- * @LastEditors: web.王晓冬
- * @LastEditTime: 2021-10-10 22:32:48
+ * @LastEditors: itab.link
+ * @LastEditTime: 2023-11-09 15:44:51
  * @Description: file content
 -->
 
@@ -40,18 +40,9 @@
 
 [https://codelife.cc/vue3-video-play/](https://codelife.cc/vue3-video-play/)
 
-## 近期更新 v1.3.1-beta.3 🎉
+## 近期更新 v1.3.3 🎉
 
-- 新增: 支持 hls 视频流播放
-- 新增: 新增画质切换，需视频流支持
-- 新增: 新增画音视切换，需视频流支持
-- 新增: props 参数增加`currentTime`属性，可跳转到固定时间播放
-- 新增: props 参数增加`type`属性，视频格式
-- 新增: props 参数增加`controlBtns`属性，自定义控制器按钮显示
-- 新增: 右键菜单功能，右键菜单包涵，视频滤镜调节、快捷键说明、复制当前视频网址
-- 新增: `mirrorChange` `loopChange` `lightOffChange` 事件
-- 新增: 增加空格快捷键 `播放/暂停` 的操作
-- 优化: 如果音量为 0 关闭静音按钮 音量设置为 5
+- 修复: 右键事件错误
 
 # 使用指南
 
@@ -90,7 +81,7 @@ app.mount("#app");
 ```js
 // require style
 import "vue3-video-play/dist/style.css";
-import { videoPlay } from "vue-video-play";
+import { videoPlay } from "vue3-video-play";
 export default {
   components: {
     videoPlay,
@@ -116,7 +107,7 @@ export default {
 <script setup lang="ts">
 import { reactive } from "vue";
 const options = reactive({
-  width: "800px", //播放器高度
+  width: "800px", //播放器宽度
   height: "450px", //播放器高度
   color: "#409eff", //主题色
   title: "", //视频名称
@@ -299,7 +290,7 @@ vue3-video-play 支持 video 原生所有 Attributes [video 原生属性](https:
 | color         |     播放器主色调      | string  |                                                 -                                                  |                                              #409eff                                               |
 | src           |       视频资源        | string  |                                                 -                                                  |                                                 -                                                  |
 | title         |       视频名称        | string  |                                                 -                                                  |                                                 -                                                  |
-| type          |       视频类型        | string  |                                                 -                                                  |                                             video/mp4                                              |
+| type          |       视频类型        | string  |                                                 -                                                  |                                             video/mp4|m3u8                                            |
 | poster        |       视频封面        | string  |                                                 -                                                  |                                             视频第一帧                                             |
 | webFullScreen |       网页全屏        | boolean |                                                 -                                                  |                                               false                                                |
 | speed         |   是否支持快进快退    | boolean |                                                 -                                                  |                                                true                                                |
