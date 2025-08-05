@@ -1,6 +1,7 @@
 name: Publish to npm
 
 on:
+  workflow_dispatch:  # 最简写法
   push:
     tags:
       - 'v*'  # 推送 v1.0.0, v1.1.0 等 tag 时触发
